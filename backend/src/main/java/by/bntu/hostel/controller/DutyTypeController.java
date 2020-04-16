@@ -27,7 +27,7 @@ public class DutyTypeController {
         return dutyTypeService.findById(id);
     }
 
-    @GetMapping
+    @GetMapping("/find-all")
     public List<DutyType> findAll(@RequestParam int pageNo, @RequestParam int pageSize){
         return dutyTypeService.findAll(pageNo,pageSize);
     }

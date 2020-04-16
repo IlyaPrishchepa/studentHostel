@@ -27,7 +27,7 @@ public class StatusPassportController {
         return statusPassportService.findById(id);
     }
 
-    @GetMapping
+    @GetMapping("/find-all")
     public List<StatusPassport> findAll(@RequestParam int pageNo, @RequestParam int pageSize){
         return statusPassportService.findAll(pageNo,pageSize);
     }

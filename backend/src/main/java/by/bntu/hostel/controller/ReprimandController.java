@@ -28,7 +28,7 @@ public class ReprimandController {
         return reprimandService.findById(id);
     }
 
-    @GetMapping
+    @GetMapping("/find-all")
     public List<Reprimand> findAll(@RequestParam int pageNo, @RequestParam int pageSize){
         return reprimandService.findAll(pageNo,pageSize);
     }

@@ -39,4 +39,14 @@ public class BaseServiceImpl implements BaseService{
     public int getSize() {
         return (int) baseRepo.count();
     }
+
+    @Override
+    public Base findByLoginAndEmail(String login, String password) {
+        return findByLoginAndEmail(login,password);
+    }
+
+    @Override
+    public Base findByLogin(String login) {
+        return findByLogin(login);
+    }
 }

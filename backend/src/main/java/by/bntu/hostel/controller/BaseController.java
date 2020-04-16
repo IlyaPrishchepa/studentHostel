@@ -27,7 +27,7 @@ public class BaseController {
         return baseService.findById(id);
     }
 
-    @GetMapping
+    @GetMapping("/find-all")
     public List<Base> findAll(@RequestParam int pageNo, @RequestParam int pageSize){
         return baseService.findAll(pageNo,pageSize);
     }
@@ -40,6 +40,16 @@ public class BaseController {
     @GetMapping("/size")
     public int getSize() {
         return baseService.getSize();
+    }
+
+    @GetMapping
+    public Base findByLoginAndPassword(@RequestParam String login,@RequestParam String password) {
+        return baseService.findByLoginAndEmail(login,password);
+    }
+
+    @GetMapping("/find-by-login/{login}")
+    public Base findByLoginl(@PathVariable String login) {
+        return baseService.findByLogin(login);
     }
 
 }

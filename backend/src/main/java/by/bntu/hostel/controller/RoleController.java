@@ -27,7 +27,7 @@ public class RoleController {
         return roleService.findById(id);
     }
 
-    @GetMapping
+    @GetMapping("/find-all")
     public List<Role> findAll(@RequestParam int pageNo, @RequestParam int pageSize){
         return roleService.findAll(pageNo,pageSize);
     }

@@ -27,7 +27,7 @@ public class WorkingOffController  {
         return workingOffService.findById(id);
     }
 
-    @GetMapping
+    @GetMapping("/find-all")
     public List<WorkingOff> findAll(@RequestParam int pageNo, @RequestParam int pageSize){
         return workingOffService.findAll(pageNo,pageSize);
     }

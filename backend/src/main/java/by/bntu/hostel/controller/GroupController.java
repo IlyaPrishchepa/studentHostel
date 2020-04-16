@@ -28,7 +28,7 @@ public class GroupController {
         return groupService.findById(id);
     }
 
-    @GetMapping
+    @GetMapping("/find-all")
     public List<Group> findAll(@RequestParam int pageNo, @RequestParam int pageSize){
         return groupService.findAll(pageNo,pageSize);
     }

@@ -27,7 +27,7 @@ public class StudentRoomController {
         return studentRoomService.findById(id);
     }
 
-    @GetMapping
+    @GetMapping("/find-all")
     public List<StudentRoom> findAll(@RequestParam int pageNo, @RequestParam int pageSize){
         return studentRoomService.findAll(pageNo,pageSize);
     }

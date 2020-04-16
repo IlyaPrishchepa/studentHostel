@@ -27,7 +27,7 @@ public class RoomController {
         return roomService.findById(id);
     }
 
-    @GetMapping
+    @GetMapping("/find-all")
     public List<Room> findAll(@RequestParam int pageNo, @RequestParam int pageSize){
         return roomService.findAll(pageNo,pageSize);
     }

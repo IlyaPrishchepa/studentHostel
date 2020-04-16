@@ -27,7 +27,7 @@ public class StudentController {
         return studentService.findById(id);
     }
 
-    @GetMapping
+    @GetMapping("/find-all")
     public List<Student> findAll(@RequestParam int pageNo, @RequestParam int pageSize){
         return studentService.findAll(pageNo,pageSize);
     }
