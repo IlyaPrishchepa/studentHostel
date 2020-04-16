@@ -1,5 +1,6 @@
 package by.bntu.hostel.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,5 +20,9 @@ public class Role {
   @Basic
   @Column(name = "name",nullable = false)
   private String name;
+
+  @OneToOne(mappedBy = "roleId", cascade = CascadeType.ALL)
+  @JsonIgnore
+  private Base base;
 
 }

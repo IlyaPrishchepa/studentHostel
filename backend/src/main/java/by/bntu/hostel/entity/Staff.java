@@ -21,10 +21,6 @@ public class Staff {
   private Base baseId;
 
   @Basic
-  @Column(name = "role_id")
-  private int roleId;
-
-  @Basic
   @Column(name = "description")
   private String description;
 

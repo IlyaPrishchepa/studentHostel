@@ -2,7 +2,6 @@ package by.bntu.hostel.controller;
 
 import by.bntu.hostel.entity.StudentRoom;
 import by.bntu.hostel.services.implementation.StudentRoomServiceImpl;
-import by.bntu.hostel.services.interfaces.StudentRoomService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +11,7 @@ import java.util.List;
 @Api
 @RestController
 @RequestMapping("/student-room")
-public class StudentRoomController implements StudentRoomService {
+public class StudentRoomController {
 
     @Autowired
     private StudentRoomServiceImpl studentRoomService;

@@ -1,7 +1,6 @@
 package by.bntu.hostel.services.implementation;
 
 import by.bntu.hostel.entity.Statement;
-import by.bntu.hostel.entity.StatusStatement;
 import by.bntu.hostel.repository.StatementRepo;
 import by.bntu.hostel.services.interfaces.StatementService;
 import org.springframework.beans.factory.annotation.Autowired;

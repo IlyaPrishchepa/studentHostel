@@ -2,7 +2,6 @@ package by.bntu.hostel.services.implementation;
 
 import by.bntu.hostel.entity.Student;
 import by.bntu.hostel.repository.StudentRepo;
-import by.bntu.hostel.services.interfaces.StudentReprimandService;
 import by.bntu.hostel.services.interfaces.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
