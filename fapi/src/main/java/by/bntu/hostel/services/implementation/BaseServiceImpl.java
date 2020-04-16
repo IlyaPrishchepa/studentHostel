@@ -10,6 +10,7 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,7 @@ import java.util.List;
 import java.util.Set;
 
 @Service("baseService")
-public class BaseServiceImpl implements BaseService{
+public class BaseServiceImpl implements BaseService, UserDetailsService {
 
     @Autowired
     private BackendApiProperties backendApiProperties;
@@ -79,15 +80,6 @@ public class BaseServiceImpl implements BaseService{
                 +"/find-by-login/" + login, Base.class);
     }
 
-    @Override
-    public UserDetails loadBaseByLogin(String login) throws UsernameNotFoundException {
-        Base base = findByLogin(login);
-        if(base == null){
-            throw new UsernameNotFoundException("Invalid login!");
-        }
-        return new User(base.getLogin(), base.getPassword(), getAuthority(base));
-    }
-
     private Set<SimpleGrantedAuthority> getAuthority(Base base) {
         Set<SimpleGrantedAuthority> authorities = new HashSet();
         authorities.add(new SimpleGrantedAuthority(base.getRoleId().getName()));
@@ -105,5 +97,14 @@ public class BaseServiceImpl implements BaseService{
             e.printStackTrace();
         }
         return login;
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
+        Base base = findByLogin(login);
+        if(base == null){
+            throw new UsernameNotFoundException("Invalid login!");
+        }
+        return new User(base.getLogin(), base.getPassword(), getAuthority(base));
     }
 }

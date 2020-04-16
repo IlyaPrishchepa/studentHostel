@@ -1,5 +1,6 @@
 package by.bntu.hostel.config;
 
+import by.bntu.hostel.services.implementation.BaseServiceImpl;
 import by.bntu.hostel.services.interfaces.BaseService;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.SignatureException;
@@ -24,7 +25,7 @@ import static by.bntu.hostel.config.Constants.TOKEN_PREFIX;
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     @Autowired
-    private BaseService baseService;
+    private BaseServiceImpl baseService;
 
     @Autowired
     private JwtTokenProvider jwtTokenUtil;
@@ -53,7 +54,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         }
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 
-            UserDetails userDetails = baseService.loadBaseByLogin(username);
+            UserDetails userDetails = baseService.loadUserByUsername(username);
 
             if (jwtTokenUtil.validateToken(authToken, userDetails)) {
                 UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails,
