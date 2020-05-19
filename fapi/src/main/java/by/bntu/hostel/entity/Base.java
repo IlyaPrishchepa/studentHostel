@@ -19,6 +19,6 @@ public class Base {
   private Blob photo;
   private Staff staff;
   private Student student;
-  private Role roleId;
+  private int roleId;
 
 }

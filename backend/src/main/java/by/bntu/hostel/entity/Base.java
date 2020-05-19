@@ -54,8 +54,8 @@ public class Base {
   @JsonIgnore
   private Student student;
 
-  @OneToOne(cascade = CascadeType.ALL)
-  @JoinColumn(name = "role_id", referencedColumnName = "id")
-  private Role roleId;
+  @Basic
+  @Column(name = "role_id",nullable = false)
+  private int roleId;
 
 }

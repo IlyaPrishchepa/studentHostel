@@ -21,8 +21,4 @@ public class Role {
   @Column(name = "name",nullable = false)
   private String name;
 
-  @OneToOne(mappedBy = "roleId", cascade = CascadeType.ALL)
-  @JsonIgnore
-  private Base base;
-
 }
