@@ -39,4 +39,9 @@ public class StudentRoomServiceImpl implements StudentRoomService {
     public int getSize() {
         return (int) studentRoomRepo.count();
     }
+
+    @Override
+    public StudentRoom findStudentRoomByKey(String key) {
+        return studentRoomRepo.findStudentRoomByKey(key);
+    }
 }

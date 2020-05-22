@@ -1,6 +1,6 @@
 package by.bntu.hostel.controller;
 
-import by.bntu.hostel.config.JwtTokenProvider;
+import by.bntu.hostel.config.JwtTokenUtil;
 import by.bntu.hostel.entity.AuthToken;
 import by.bntu.hostel.entity.Base;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ public class AuthenticationController {
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    private JwtTokenProvider jwtTokenUtil;
+    private JwtTokenUtil jwtTokenUtil;
 
     @PostMapping("/generate-token")
     public ResponseEntity<?> register(@RequestBody Base base) {

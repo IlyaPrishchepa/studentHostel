@@ -42,4 +42,8 @@ public class RoleController {
         return roleService.getSize();
     }
 
+    @GetMapping("/find-by-name/{name}")
+    public Role findByName(@PathVariable String name) {
+        return roleService.findByName(name);
+    }
 }

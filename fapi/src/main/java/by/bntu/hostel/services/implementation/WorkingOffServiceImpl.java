@@ -37,7 +37,7 @@ public class WorkingOffServiceImpl implements WorkingOffService {
     @Override
     public List<WorkingOff> findAll(int page, int size) {
         return Arrays.asList(restTemplate.getForObject(backendApiProperties.getWorkingOffUri()
-                +"/find-all/?pageSize="+page+"&pageNo="+size, WorkingOff[].class));
+                +"/find-all/?pageNo="+page+"&pageSize="+size, WorkingOff[].class));
     }
 
     @Override

@@ -11,5 +11,5 @@ public interface RoleService {
   List<Role> findAll(int page, int size);
   void deleteByID(int id);
   int getSize();
-
+  Role findByName(String name);
 }

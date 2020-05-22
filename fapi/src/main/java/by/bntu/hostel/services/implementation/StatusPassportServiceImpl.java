@@ -37,7 +37,7 @@ public class StatusPassportServiceImpl implements StatusPassportService {
     @Override
     public List<StatusPassport> findAll(int page, int size) {
         return Arrays.asList(restTemplate.getForObject(backendApiProperties.getStatusPassportUri()
-                +"/find-all/?pageSize="+page+"&pageNo="+size, StatusPassport[].class));
+                +"/find-all/?pageNo="+page+"&pageSize="+size, StatusPassport[].class));
     }
 
     @Override

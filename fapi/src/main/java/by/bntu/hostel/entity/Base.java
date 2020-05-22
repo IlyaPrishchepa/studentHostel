@@ -17,8 +17,6 @@ public class Base {
   private String middleName;
   private String phone;
   private Blob photo;
-  private Staff staff;
-  private Student student;
-  private int roleId;
+  private Integer roleId;
 
 }

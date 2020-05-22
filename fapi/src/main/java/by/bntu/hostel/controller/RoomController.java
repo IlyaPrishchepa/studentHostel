@@ -27,7 +27,7 @@ public class RoomController {
 
     @GetMapping("/find-all")
     public List<Room> findAll(@RequestParam int pageNo, @RequestParam int pageSize){
-        return roomService.findAll(pageNo,pageSize);
+        return roomService.findAll(pageNo-1,pageSize);
     }
 
     @DeleteMapping("/{id}")

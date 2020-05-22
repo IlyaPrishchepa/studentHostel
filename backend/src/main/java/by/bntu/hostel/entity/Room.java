@@ -14,10 +14,10 @@ public class Room {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
-  private int id;
+  private Integer id;
 
   @Basic
-  @Column(name = "number_place")
+  @Column(name = "number_places")
   private int numberPlace;
 
   @Basic

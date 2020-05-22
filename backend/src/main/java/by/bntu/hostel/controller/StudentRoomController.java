@@ -42,4 +42,9 @@ public class StudentRoomController {
         return studentRoomService.getSize();
     }
 
+    @GetMapping("/find-by-key/{key}")
+    public StudentRoom findByKey(@PathVariable String key) {
+        return studentRoomService.findStudentRoomByKey(key);
+    }
+
 }

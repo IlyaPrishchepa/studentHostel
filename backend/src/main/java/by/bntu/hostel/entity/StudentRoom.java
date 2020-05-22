@@ -17,15 +17,15 @@ public class StudentRoom {
   private int id;
 
   @Basic
-  @Column(name = "student_id",nullable = false)
-  private int studentId;
+  @Column(name = "student_id")
+  private Integer studentId;
 
   @Basic
   @Column(name = "room_id",nullable = false)
-  private int roomId;
+  private Integer roomId;
 
   @Basic
-  @Column(name = "key",nullable = false)
+  @Column(name = "personal_key",nullable = false)
   private String key;
 
 }

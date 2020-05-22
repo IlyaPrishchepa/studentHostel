@@ -37,7 +37,7 @@ public class StatusStatementServiceImpl implements StatusStatementService {
     @Override
     public List<StatusStatement> findAll(int page, int size) {
         return Arrays.asList(restTemplate.getForObject(backendApiProperties.getStatusStatementUri()
-                +"/find-all/?pageSize="+page+"&pageNo="+size, StatusStatement[].class));
+                +"/find-all/?pageNo="+page+"&pageSize="+size, StatusStatement[].class));
     }
 
     @Override

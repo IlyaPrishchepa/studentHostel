@@ -27,7 +27,7 @@ public class StudentRoomController {
 
     @GetMapping("/find-all")
     public List<StudentRoom> findAll(@RequestParam int pageNo, @RequestParam int pageSize){
-        return studentRoomService.findAll(pageNo,pageSize);
+        return studentRoomService.findAll(pageNo-1,pageSize);
     }
 
     @DeleteMapping("/{id}")
@@ -38,6 +38,11 @@ public class StudentRoomController {
     @GetMapping("/size")
     public int getSize() {
         return studentRoomService.getSize();
+    }
+
+    @GetMapping("/find-by-key/{key}")
+    public StudentRoom findByKey(@PathVariable String key) {
+        return studentRoomService.findStudentRoomByKey(key);
     }
 
 }

@@ -27,7 +27,7 @@ public class PaymentController {
 
     @GetMapping("/find-all")
     public List<Payment> findAll(@RequestParam int pageNo, @RequestParam int pageSize){
-        return paymentService.findAll(pageNo,pageSize);
+        return paymentService.findAll(pageNo-1,pageSize);
     }
 
     @DeleteMapping("/{id}")

@@ -37,7 +37,7 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public List<Role> findAll(int page, int size) {
         return Arrays.asList(restTemplate.getForObject(backendApiProperties.getRoleUri()
-                +"/find-all/?pageSize="+page+"&pageNo="+size, Role[].class));
+                +"/find-all/?pageNo="+page+"&pageSize="+size, Role[].class));
     }
 
     @Override
@@ -49,4 +49,10 @@ public class RoleServiceImpl implements RoleService {
     public int getSize() {
         return restTemplate.getForObject(backendApiProperties.getRoleUri()+"/size", Integer.class);
     }
+
+    @Override
+    public Role findByName(String name) {
+        return restTemplate.getForObject(backendApiProperties.getRoleUri()+"/find-by-name/"+name, Role.class);
+    }
+
 }

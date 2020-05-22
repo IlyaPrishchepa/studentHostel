@@ -37,7 +37,7 @@ public class RoomServiceImpl implements RoomService {
     @Override
     public List<Room> findAll(int page, int size) {
         return Arrays.asList(restTemplate.getForObject(backendApiProperties.getRoomUri()
-                +"/find-all/?pageSize="+page+"&pageNo="+size, Room[].class));
+                +"/find-all/?pageNo="+page+"&pageSize="+size, Room[].class));
     }
 
     @Override

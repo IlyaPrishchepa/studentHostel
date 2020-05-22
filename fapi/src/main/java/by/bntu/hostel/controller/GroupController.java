@@ -28,7 +28,7 @@ public class GroupController {
 
     @GetMapping("/find-all")
     public List<Group> findAll(@RequestParam int pageNo, @RequestParam int pageSize){
-        return groupService.findAll(pageNo,pageSize);
+        return groupService.findAll(pageNo-1,pageSize);
     }
 
     @DeleteMapping("/{id}")

@@ -37,7 +37,7 @@ public class StaffServiceImpl implements StaffService {
     @Override
     public List<Staff> findAll(int page, int size) {
         return Arrays.asList(restTemplate.getForObject(backendApiProperties.getStaffUri()
-                +"/find-all/?pageSize="+page+"&pageNo="+size, Staff[].class));
+                +"/find-all/?pageNo="+page+"&pageSize="+size, Staff[].class));
     }
 
     @Override

@@ -14,7 +14,7 @@ public class Student {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
-  private int id;
+  private Integer id;
 
   @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "base_id", referencedColumnName = "id")
@@ -22,10 +22,10 @@ public class Student {
 
   @Basic
   @Column(name = "group_id",nullable = false)
-  private int group;
+  private Integer group;
 
   @Basic
-  @Column(name = "status_passport_id",nullable = false)
-  private int statusPassportId;
+  @Column(name = "status_passport_id")
+  private Integer statusPassportId;
 
 }

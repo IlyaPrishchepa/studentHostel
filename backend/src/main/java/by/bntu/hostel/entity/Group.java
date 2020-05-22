@@ -14,10 +14,10 @@ public class Group {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
-  private int id;
+  private Integer id;
 
   @Basic
   @Column(name = "number",nullable = false)
-  private int number;
+  private Integer studyNumber;
 
 }

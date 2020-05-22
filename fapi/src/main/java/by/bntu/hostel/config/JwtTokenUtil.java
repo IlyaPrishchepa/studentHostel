@@ -18,8 +18,7 @@ import static by.bntu.hostel.config.Constants.*;
 
 
 @Component
-public class JwtTokenProvider implements Serializable {
-
+public class JwtTokenUtil implements Serializable {
 
     public String getUsernameFromToken(String token) {
         return getClaimFromToken(token, Claims::getSubject);

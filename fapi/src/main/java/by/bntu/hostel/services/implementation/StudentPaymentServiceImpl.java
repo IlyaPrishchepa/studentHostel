@@ -37,7 +37,7 @@ public class StudentPaymentServiceImpl implements StudentPaymentService {
     @Override
     public List<StudentPayment> findAll(int page, int size) {
         return Arrays.asList(restTemplate.getForObject(backendApiProperties.getStudentPaymentUri()
-                +"/find-all/?pageSize="+page+"&pageNo="+size, StudentPayment[].class));
+                +"/find-all/?pageNo="+page+"&pageSize="+size, StudentPayment[].class));
     }
 
     @Override

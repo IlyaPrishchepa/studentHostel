@@ -37,7 +37,7 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public List<Payment> findAll(int page, int size) {
         return Arrays.asList(restTemplate.getForObject(backendApiProperties.getPaymentUri()
-                +"/find-all/?pageSize="+page+"&pageNo="+size, Payment[].class));
+                +"/find-all/?pageNo="+page+"&pageSize="+size, Payment[].class));
     }
 
     @Override

@@ -27,7 +27,7 @@ public class RoleController {
 
     @GetMapping("/find-all")
     public List<Role> findAll(@RequestParam int pageNo, @RequestParam int pageSize){
-        return roleService.findAll(pageNo,pageSize);
+        return roleService.findAll(pageNo-1,pageSize);
     }
 
     @DeleteMapping("/{id}")
@@ -38,6 +38,11 @@ public class RoleController {
     @GetMapping("/size")
     public int getSize() {
         return roleService.getSize();
+    }
+
+    @GetMapping("/find-by-name/{name}")
+    public Role findByName(@PathVariable String name) {
+        return roleService.findByName(name);
     }
 
 }

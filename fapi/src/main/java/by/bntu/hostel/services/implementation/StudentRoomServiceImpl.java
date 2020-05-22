@@ -37,7 +37,7 @@ public class StudentRoomServiceImpl implements StudentRoomService {
     @Override
     public List<StudentRoom> findAll(int page, int size) {
         return Arrays.asList(restTemplate.getForObject(backendApiProperties.getStudentRoomUri()
-                +"/find-all/?pageSize="+page+"&pageNo="+size, StudentRoom[].class));
+                +"/find-all/?pageNo="+page+"&pageSize="+size, StudentRoom[].class));
     }
 
     @Override
@@ -49,4 +49,10 @@ public class StudentRoomServiceImpl implements StudentRoomService {
     public int getSize() {
         return restTemplate.getForObject(backendApiProperties.getStudentRoomUri()+"/size", Integer.class);
     }
+
+    @Override
+    public StudentRoom findStudentRoomByKey(String key) {
+        return restTemplate.getForObject(backendApiProperties.getStudentRoomUri()+"/find-by-key/"+key, StudentRoom.class);
+    }
+
 }

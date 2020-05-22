@@ -8,6 +8,6 @@ import lombok.Data;
 public class Group {
 
   private int id;
-  private int number;
+  private int studyNumber;
 
 }

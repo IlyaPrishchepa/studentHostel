@@ -37,7 +37,7 @@ public class DutyServiceImpl implements DutyService {
     @Override
     public List<Duty> findAll(int page, int size) {
         return Arrays.asList(restTemplate.getForObject(backendApiProperties.getDutyUri()
-                +"/find-all/?pageSize="+page+"&pageNo="+size, Duty[].class));
+                +"/find-all/?pageNo="+page+"&pageSize="+size, Duty[].class));
     }
 
     @Override

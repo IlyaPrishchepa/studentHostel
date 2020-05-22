@@ -37,7 +37,7 @@ public class ReprimandServiceImpl implements ReprimandService {
     @Override
     public List<Reprimand> findAll(int page, int size) {
         return Arrays.asList(restTemplate.getForObject(backendApiProperties.getReprimandUri()
-                +"/find-all/?pageSize="+page+"&pageNo="+size, Reprimand[].class));
+                +"/find-all/?pageNo="+page+"&pageSize="+size, Reprimand[].class));
     }
 
     @Override

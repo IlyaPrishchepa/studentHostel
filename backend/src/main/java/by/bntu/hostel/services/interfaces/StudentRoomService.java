@@ -11,5 +11,6 @@ public interface StudentRoomService {
     List<StudentRoom> findAll(int page, int size);
     void deleteByID(int id);
     int getSize();
+    StudentRoom findStudentRoomByKey(String key);
 
 }

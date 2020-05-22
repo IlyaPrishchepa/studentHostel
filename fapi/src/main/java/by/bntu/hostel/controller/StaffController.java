@@ -27,7 +27,7 @@ public class StaffController {
 
     @GetMapping("/find-all")
     public List<Staff> findAll(@RequestParam int pageNo, @RequestParam int pageSize){
-        return staffService.findAll(pageNo,pageSize);
+        return staffService.findAll(pageNo-1,pageSize);
     }
 
     @DeleteMapping("/{id}")

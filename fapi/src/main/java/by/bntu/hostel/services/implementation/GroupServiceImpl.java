@@ -37,7 +37,7 @@ public class GroupServiceImpl implements GroupService {
     @Override
     public List<Group> findAll(int page, int size) {
         return Arrays.asList(restTemplate.getForObject(backendApiProperties.getGroupUri()
-                +"/find-all/?pageSize="+page+"&pageNo="+size, Group[].class));
+                +"/find-all/?pageNo="+page+"&pageSize="+size, Group[].class));
     }
 
     @Override

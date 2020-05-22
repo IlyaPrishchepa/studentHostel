@@ -16,7 +16,7 @@ public class Base {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
-  private int id;
+  private Integer id;
 
   @Basic
   @Column(name = "login",nullable = false)
@@ -56,6 +56,6 @@ public class Base {
 
   @Basic
   @Column(name = "role_id",nullable = false)
-  private int roleId;
+  private Integer roleId;
 
 }

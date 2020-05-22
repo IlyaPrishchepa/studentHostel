@@ -39,4 +39,9 @@ public class RoleServiceImpl implements RoleService {
     public int getSize() {
         return (int) roleRepo.count();
     }
+
+    @Override
+    public Role findByName(String name) {
+        return roleRepo.findRoleByName(name);
+    }
 }

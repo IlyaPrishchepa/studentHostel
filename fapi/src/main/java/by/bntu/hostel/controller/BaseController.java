@@ -31,7 +31,7 @@ public class BaseController {
 
     @GetMapping("/find-all")
     public List<Base> findAll(@RequestParam int pageNo, @RequestParam int pageSize){
-        return baseService.findAll(pageNo,pageSize);
+        return baseService.findAll(pageNo-1,pageSize);
     }
 
     @DeleteMapping("/{id}")
@@ -54,7 +54,7 @@ public class BaseController {
         return baseService.findByLogin(login);
     }
 
-    @GetMapping("/get-current-login")
+    @GetMapping("/get-current-base")
     public ResponseEntity<Base> getCurrentBase(@RequestHeader(value = "Authorization", required = false) String bearerToken) {
         String login = baseService.getLogin(bearerToken);
         return ResponseEntity.ok(baseService.findByLogin(login));

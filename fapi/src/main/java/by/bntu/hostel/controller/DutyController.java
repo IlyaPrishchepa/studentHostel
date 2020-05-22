@@ -28,7 +28,7 @@ public class DutyController  {
 
     @GetMapping("/find-all")
     public List<Duty> findAll(@RequestParam int pageNo, @RequestParam int pageSize){
-        return dutyService.findAll(pageNo,pageSize);
+        return dutyService.findAll(pageNo-1,pageSize);
     }
 
     @DeleteMapping("/{id}")

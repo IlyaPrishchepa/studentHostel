@@ -27,7 +27,7 @@ public class StatementController {
 
     @GetMapping("/find-all")
     public List<Statement> findAll(@RequestParam int pageNo, @RequestParam int pageSize){
-        return statementService.findAll(pageNo,pageSize);
+        return statementService.findAll(pageNo-1,pageSize);
     }
 
     @DeleteMapping("/{id}")

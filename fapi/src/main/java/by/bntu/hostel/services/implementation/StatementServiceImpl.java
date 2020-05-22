@@ -37,7 +37,7 @@ public class StatementServiceImpl implements StatementService {
     @Override
     public List<Statement> findAll(int page, int size) {
         return Arrays.asList(restTemplate.getForObject(backendApiProperties.getStatementUri()
-                +"/find-all/?pageSize="+page+"&pageNo="+size, Statement[].class));
+                +"/find-all/?pageNo="+page+"&pageSize="+size, Statement[].class));
     }
 
     @Override

@@ -37,7 +37,7 @@ public class StudentReprimandServiceImpl implements StudentReprimandService {
     @Override
     public List<StudentReprimand> findAll(int page, int size) {
         return Arrays.asList(restTemplate.getForObject(backendApiProperties.getStudentReprimandUri()
-                +"/find-all/?pageSize="+page+"&pageNo="+size, StudentReprimand[].class));
+                +"/find-all/?pageNo="+page+"&pageSize="+size, StudentReprimand[].class));
     }
 
     @Override

@@ -1,7 +1,7 @@
 package by.bntu.hostel.services.implementation;
 
 import by.bntu.hostel.config.Constants;
-import by.bntu.hostel.config.JwtTokenProvider;
+import by.bntu.hostel.config.JwtTokenUtil;
 import by.bntu.hostel.entity.Base;
 import by.bntu.hostel.property.BackendApiProperties;
 import by.bntu.hostel.services.interfaces.BaseService;
@@ -28,10 +28,13 @@ public class BaseServiceImpl implements BaseService, UserDetailsService {
     private BackendApiProperties backendApiProperties;
 
     @Autowired
+    private RoleServiceImpl roleService;
+
+    @Autowired
     private BCryptPasswordEncoder bcryptEncoder;
 
     @Autowired
-    private JwtTokenProvider jwtTokenProvider;
+    private JwtTokenUtil jwtTokenProvider;
 
 
     private final RestTemplate restTemplate;
@@ -55,7 +58,7 @@ public class BaseServiceImpl implements BaseService, UserDetailsService {
     @Override
     public List<Base> findAll(int page, int size) {
         return Arrays.asList(restTemplate.getForObject(backendApiProperties.getBaseUri()
-                +"/find-all/?pageSize="+page+"&pageNo="+size, Base[].class));
+                +"/find-all/?pageNo="+page+"&pageSize="+size, Base[].class));
     }
 
     @Override
@@ -82,7 +85,7 @@ public class BaseServiceImpl implements BaseService, UserDetailsService {
 
     private Set<SimpleGrantedAuthority> getAuthority(Base base) {
         Set<SimpleGrantedAuthority> authorities = new HashSet();
-        authorities.add(new SimpleGrantedAuthority(base.getRoleId().getName()));
+        authorities.add(new SimpleGrantedAuthority(roleService.findById(base.getRoleId()).getName()));
         return authorities;
     }
 

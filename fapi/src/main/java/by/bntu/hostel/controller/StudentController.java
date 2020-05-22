@@ -2,6 +2,7 @@ package by.bntu.hostel.controller;
 
 import by.bntu.hostel.entity.Student;
 import by.bntu.hostel.services.implementation.StudentServiceImpl;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,8 +16,8 @@ public class StudentController {
     private StudentServiceImpl studentService;
 
     @PostMapping
-    public Student create(@RequestBody Student student){
-        return studentService.create(student);
+    public ResponseEntity<Student> create(@RequestBody Student student){
+        return  ResponseEntity.ok(studentService.create(student));
 
     }
 
@@ -27,7 +28,7 @@ public class StudentController {
 
     @GetMapping("/find-all")
     public List<Student> findAll(@RequestParam int pageNo, @RequestParam int pageSize){
-        return studentService.findAll(pageNo,pageSize);
+        return studentService.findAll(pageNo-1,pageSize);
     }
 
     @DeleteMapping("/{id}")

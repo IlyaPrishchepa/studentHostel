@@ -37,7 +37,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<Student> findAll(int page, int size) {
         return Arrays.asList(restTemplate.getForObject(backendApiProperties.getStudentUri()
-                +"/find-all/?pageSize="+page+"&pageNo="+size, Student[].class));
+                +"/find-all/?pageNo="+page+"&pageSize="+size, Student[].class));
     }
 
     @Override

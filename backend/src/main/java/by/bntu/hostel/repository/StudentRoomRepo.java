@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface StudentRoomRepo extends JpaRepository<StudentRoom,Integer> {
+    StudentRoom findStudentRoomByKey(String key);
+
 }
