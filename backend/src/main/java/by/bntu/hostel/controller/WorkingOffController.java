@@ -42,4 +42,9 @@ public class WorkingOffController  {
         return workingOffService.getSize();
     }
 
+    @GetMapping("/find-by-StudentId/{id}")
+    public WorkingOff findByStudentId(@PathVariable int id) {
+        return workingOffService.findByStudentID(id);
+    }
+
 }

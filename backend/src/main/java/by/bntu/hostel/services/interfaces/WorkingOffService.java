@@ -11,5 +11,6 @@ public interface WorkingOffService {
   List<WorkingOff> findAll(int page, int size);
   void deleteByID(int id);
   int getSize();
+  WorkingOff findByStudentID(int id);
 
 }

@@ -49,4 +49,24 @@ public class StudentPaymentServiceImpl implements StudentPaymentService {
     public int getSize() {
         return restTemplate.getForObject(backendApiProperties.getStudentPaymentUri()+"/size", Integer.class);
     }
+
+    @Override
+    public StudentPayment findByStudentID(int id) {
+        return restTemplate.getForObject(backendApiProperties.getStudentPaymentUri() +
+                "/find-by-StudentId/" + id, StudentPayment.class);
+    }
+
+    @Override
+    public List<StudentPayment> findAllByStudentID(int page, int size, int id) {
+        return Arrays.asList(restTemplate.getForObject(backendApiProperties.getStudentPaymentUri()
+                + "/find-by-all-StudentId?page=" + page+ "&size="+size
+                + "&id="+id, StudentPayment[].class));
+    }
+
+    @Override
+    public double paymentArrears(int id) {
+        return restTemplate.getForObject(backendApiProperties.getStudentPaymentUri() +
+                "/payment-arrears/" + id, Double.class);
+    }
+
 }

@@ -23,7 +23,8 @@ import { StudentPaymentComponent } from './components/student-payment/student-pa
 import { StudentStatementComponent } from './components/student-statement/student-statement.component';
 import { StudentStatementPageComponent } from './pages/student-statement-page/student-statement-page.component';
 import { StudentNeighdorsPageComponent } from './pages/student-neighdors-page/student-neighdors-page.component';
-import { StudentNeighdorsComponent } from './components/student-neighdors/student-neighdors.component';
+import { StudentNeighborsComponent } from './components/student-neighdors/student-neighbors.component';
+import {TokenStorage} from './token.storage';
 
 @NgModule({
   declarations: [
@@ -46,16 +47,17 @@ import { StudentNeighdorsComponent } from './components/student-neighdors/studen
     StudentStatementComponent,
     StudentStatementPageComponent,
     StudentNeighdorsPageComponent,
-    StudentNeighdorsComponent,
+    StudentNeighborsComponent,
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [
+    TokenStorage,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: Interceptor,

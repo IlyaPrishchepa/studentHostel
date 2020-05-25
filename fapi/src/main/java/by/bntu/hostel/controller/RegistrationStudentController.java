@@ -39,7 +39,7 @@ public class RegistrationStudentController {
         StudentRoom studentRoom = studentRoomService.findStudentRoomByKey(key);
         if (studentRoom != null){
             newStudent = studentService.create(converter.splitRegStudentIntoStudent(regStudent));
-            studentRoom.setStudentId(newStudent.getId());
+            studentRoom.setStudentId(newStudent);
             studentRoomService.create(studentRoom);
             return ResponseEntity.ok(newStudent);
         }

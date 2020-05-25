@@ -55,4 +55,15 @@ public class StudentRoomServiceImpl implements StudentRoomService {
         return restTemplate.getForObject(backendApiProperties.getStudentRoomUri()+"/find-by-key/"+key, StudentRoom.class);
     }
 
+    @Override
+    public StudentRoom findStudentRoomByStudentId(int id) {
+        return restTemplate.getForObject(backendApiProperties.getStudentRoomUri() +
+                "/find-studentRoom-by-StudentId/" + id, StudentRoom.class);
+    }
+
+    @Override
+    public List<StudentRoom> findByRoomId(int id) {
+        return Arrays.asList(restTemplate.getForObject(backendApiProperties.getStudentRoomUri()
+                + "/find-by-roomId/"+id, StudentRoom[].class));
+    }
 }

@@ -14,40 +14,36 @@
         <div class="table-responsive" style="">
           <h2 class="text-center"><i></i> <b>Information</b></h2>
           <table class="table table-striped">
-            <thead class="">
-            <tr>
-            </tr>
-            </thead>
             <tbody class="text-left">
             <tr>
               <td><b>First Name</b></td>
-              <td>-</td>
+              <td>{{tokenStorage.getCurrentStudent().baseId.firstName}}</td>
             </tr>
             <tr>
               <td><b>Second Name</b></td>
-              <td>-</td>
+              <td>{{tokenStorage.getCurrentStudent().baseId.secondName}}</td>
             </tr>
             <tr>
               <td><b>Middle Name</b></td>
-              <td>-</td>
+              <td>{{tokenStorage.getCurrentStudent().baseId.middleName}}</td>
             </tr>
             <tr>
               <td><b>Number Phone</b></td>
-              <td>-</td>
+              <td>{{tokenStorage.getCurrentStudent().baseId.phone}}</td>
             </tr>
             <tr>
-              <td><b>Number Group</b></td>
-              <td>-</td>
+              <td><b>Study Group</b></td>
+              <td>{{studentGroup.studyNumber}}</td>
             </tr>
             <tr>
               <td><b>Number Room</b></td>
-              <td>-</td>
+              <td>{{room.numberRoom}}</td>
             </tr>
             </tbody>
             <tbody>
             <tr>
               <td class="text-left"><b class="text-left">Status Passport</b></td>
-              <td class="text-left">-</td>
+              <td class="text-left">{{statusPassport.name}}</td>
             </tr>
             </tbody>
           </table>
@@ -57,7 +53,7 @@
             <h1 class=""><b style="">Payment arrears:</b></h1>
           </div>
           <div class="col-md-5 bg-info" style="">
-            <h1 class="" contenteditable="true"><b>10.50 BYN</b></h1>
+            <h1 class="" contenteditable="true"><b>{{paymentArrears}} BYN</b></h1>
           </div>
         </div>
       </div>
@@ -70,25 +66,15 @@
             <thead>
             <tr>
               <th>#</th>
-              <th>Discription</th>
               <th>Date</th>
+              <th>Description</th>
             </tr>
             </thead>
             <tbody>
             <tr>
               <td>1</td>
-              <td>-</td>
-              <td>23.09.2020</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>-</td>
-              <td>23.09.2020</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>-</td>
-              <td>24.09.2020</td>
+              <td>{{workingOff.date| date: 'yyyy-MM-dd'}}</td>
+              <td>{{workingOff.description}}</td>
             </tr>
             </tbody>
           </table>
@@ -103,25 +89,15 @@
             <thead>
             <tr>
               <th>#</th>
-              <th>Discription</th>
               <th>Date</th>
+              <th>Description</th>
             </tr>
             </thead>
             <tbody>
             <tr>
               <td>1</td>
-              <td>-</td>
-              <td>23.09.2020</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>-</td>
-              <td>23.09.2020</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>-</td>
-              <td>24.09.2020</td>
+              <td>{{studentReprimand.date| date: 'yyyy-MM-dd' }}</td>
+              <td>{{reprimand.name}}</td>
             </tr>
             </tbody>
           </table>

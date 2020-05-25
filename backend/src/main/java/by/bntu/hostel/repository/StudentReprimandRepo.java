@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface StudentReprimandRepo extends JpaRepository<StudentReprimand,Integer> {
+    StudentReprimand findStudentReprimandByStudentId(int id);
 }

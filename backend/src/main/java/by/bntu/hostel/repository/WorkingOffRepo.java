@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface WorkingOffRepo extends JpaRepository<WorkingOff,Integer> {
+    WorkingOff findWorkingOffByStudentId(int id);
 }

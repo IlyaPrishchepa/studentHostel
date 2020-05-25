@@ -49,4 +49,10 @@ public class StudentServiceImpl implements StudentService {
     public int getSize() {
         return restTemplate.getForObject(backendApiProperties.getStudentUri()+"/size", Integer.class);
     }
+
+    @Override
+    public Student findByBaseId(int baseId) {
+        return restTemplate.getForObject(backendApiProperties.getStudentUri()
+                +"/find-byBaseId/" + baseId, Student.class);
+    }
 }

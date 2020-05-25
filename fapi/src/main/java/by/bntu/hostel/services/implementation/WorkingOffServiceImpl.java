@@ -49,5 +49,10 @@ public class WorkingOffServiceImpl implements WorkingOffService {
     public int getSize() {
         return restTemplate.getForObject(backendApiProperties.getWorkingOffUri()+"/size", Integer.class);
     }
-    
+
+    @Override
+    public WorkingOff findByStudentID(int id) {
+        return restTemplate.getForObject(backendApiProperties.getWorkingOffUri() +
+                "/find-by-StudentId/" + id, WorkingOff.class);
+    }
 }

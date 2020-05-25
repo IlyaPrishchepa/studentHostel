@@ -39,4 +39,9 @@ public class WorkingOffServiceImpl implements WorkingOffService {
     public int getSize() {
         return (int) workingOffRepo.count();
     }
+
+    @Override
+    public WorkingOff findByStudentID(int id) {
+        return workingOffRepo.findWorkingOffByStudentId(id);
+    }
 }

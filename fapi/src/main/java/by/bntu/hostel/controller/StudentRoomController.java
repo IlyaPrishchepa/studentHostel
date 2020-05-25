@@ -45,4 +45,13 @@ public class StudentRoomController {
         return studentRoomService.findStudentRoomByKey(key);
     }
 
+    @GetMapping("/find-studentRoom-by-StudentId/{id}")
+    public StudentRoom findStudentRoomByStudentId(@PathVariable int id) {
+        return studentRoomService.findStudentRoomByStudentId(id);
+    }
+
+    @GetMapping("/find-by-roomId/{id}")
+    public List<StudentRoom> findByRoomId(@PathVariable int id){
+        return studentRoomService.findByRoomId(id);
+    }
 }

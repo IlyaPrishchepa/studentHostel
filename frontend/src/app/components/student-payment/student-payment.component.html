@@ -19,12 +19,12 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>Otto</td>
-              <td>Otto</td>
+            <tr *ngFor="let studentPayment of studentPayments; let i = index">
+              <th scope="row">{{i+1}}</th>
+              <td>{{studentPayment.date| date: 'yyyy-MM-dd'}}</td>
+              <td>{{studentPayment.amount}}</td>
+              <td>{{studentPayment.paymentId.date| date: 'yyyy-MM-dd'}}</td>
+              <td>{{studentPayment.paymentId.amount}}</td>
             </tr>
             </tbody>
           </table>

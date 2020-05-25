@@ -11,5 +11,8 @@ public interface StudentPaymentService {
   List<StudentPayment> findAll(int page, int size);
   void deleteByID(int id);
   int getSize();
+  StudentPayment findByStudentID(int id);
+  List<StudentPayment> findAllByStudentID(int page, int size, int id);
+  int getSizeByStudentId(int id);
 
 }

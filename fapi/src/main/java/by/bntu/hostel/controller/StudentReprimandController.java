@@ -40,4 +40,8 @@ public class StudentReprimandController {
         return studentReprimandService.getSize();
     }
 
+    @GetMapping("/find-by-StudentId/{id}")
+    public StudentReprimand findByStudentId(@PathVariable int id) {
+        return studentReprimandService.findByStudentID(id);
+    }
 }

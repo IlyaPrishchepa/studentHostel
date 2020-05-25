@@ -11,5 +11,6 @@ public interface StudentReprimandService {
     List<StudentReprimand> findAll(int page, int size);
     void deleteByID(int id);
     int getSize();
+    StudentReprimand findByStudentID(int id);
 
 }

@@ -63,7 +63,7 @@
                       <small class="form-text text-muted"> </small>
                     </div>
                     <div class="form-group">
-                      <label>Number Group{{selectGroup}};</label>
+                      <label>Number Group;</label>
                       <select class="form-control" [(ngModel)]="selectGroup" (ngModelChange)="onChangeGroup($event)">
                         <option  [ngValue]="group" *ngFor="let group of groups">{{group.studyNumber}}</option>
                       </select>

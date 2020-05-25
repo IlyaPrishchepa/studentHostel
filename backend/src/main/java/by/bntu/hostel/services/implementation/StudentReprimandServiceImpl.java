@@ -39,4 +39,9 @@ public class StudentReprimandServiceImpl implements StudentReprimandService {
     public int getSize() {
         return (int) studentReprimandRepo.count();
     }
+
+    @Override
+    public StudentReprimand findByStudentID(int id) {
+        return studentReprimandRepo.findStudentReprimandByStudentId(id);
+    }
 }

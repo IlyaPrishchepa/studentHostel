@@ -42,7 +42,7 @@ public class Base {
   @Column(name = "phone",nullable = false)
   private String phone;
 
-  @Lob
+  @Basic
   @Column(name = "photo")
   private Blob photo;
 

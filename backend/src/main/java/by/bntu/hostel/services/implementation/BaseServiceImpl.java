@@ -47,6 +47,6 @@ public class BaseServiceImpl implements BaseService{
 
     @Override
     public Base findByLogin(String login) {
-        return findByLogin(login);
+        return baseRepo.findBaseByLogin(login);
     }
 }

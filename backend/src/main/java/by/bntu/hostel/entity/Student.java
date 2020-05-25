@@ -1,9 +1,11 @@
 package by.bntu.hostel.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Getter
 @Setter
@@ -27,5 +29,9 @@ public class Student {
   @Basic
   @Column(name = "status_passport_id")
   private Integer statusPassportId;
+
+  @OneToOne(mappedBy = "studentId", cascade = CascadeType.ALL)
+  @JsonIgnore
+  private StudentRoom studentRoom;
 
 }

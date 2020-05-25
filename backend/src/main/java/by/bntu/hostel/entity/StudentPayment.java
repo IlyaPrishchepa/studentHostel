@@ -29,8 +29,8 @@ public class StudentPayment {
   @Column(name = "student_id",nullable = false)
   private int studentId;
 
-  @Basic
-  @Column(name = "payment_id",nullable = false)
-  private int paymentId;
+  @ManyToOne
+  @JoinColumn(name = "payment_id", referencedColumnName = "id")
+  private Payment paymentId;
 
 }

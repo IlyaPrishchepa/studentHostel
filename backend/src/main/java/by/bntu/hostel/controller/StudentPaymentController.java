@@ -42,4 +42,28 @@ public class StudentPaymentController {
         return studentPaymentService.getSize();
     }
 
+    @GetMapping("/find-by-StudentId/{id}")
+    public StudentPayment findByStudentId(@PathVariable int id) {
+        return studentPaymentService.findByStudentID(id);
+    }
+
+    @GetMapping("/find-by-all-StudentId")
+    public  List<StudentPayment> findAllByStudentID(@RequestParam int page,
+                                                    @RequestParam int size,
+                                                    @RequestParam int id){
+        return studentPaymentService.findAllByStudentID(page,size,id);
+    }
+
+    @GetMapping("/payment-arrears/{id}")
+    public double paymentArrears(@PathVariable int id) {
+        double res = 0;
+        int size = 12, page = 0;
+        size = studentPaymentService.getSizeByStudentId(id);
+
+        for (StudentPayment studentPayment:studentPaymentService.findAllByStudentID(page,size,id)){
+            res += studentPayment.getPaymentId().getAmount()*100;
+            res -= studentPayment.getAmount()*100;
+        }
+        return res/100;
+    }
 }

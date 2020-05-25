@@ -13,6 +13,6 @@ public class StudentPayment {
   private Date date;
   private double amount;
   private int studentId;
-  private int paymentId;
+  private Payment paymentId;
 
 }

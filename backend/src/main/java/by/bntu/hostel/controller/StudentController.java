@@ -42,4 +42,9 @@ public class StudentController {
         return studentService.getSize();
     }
 
+    @GetMapping("/find-byBaseId/{baseId}")
+    public Student findByBaseId(@PathVariable int baseId) {
+        return studentService.findByBaseId(baseId);
+    }
+
 }

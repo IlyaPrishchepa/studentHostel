@@ -8,7 +8,7 @@ import lombok.Data;
 public class StudentRoom {
 
   private int id;
-  private int studentId;
+  private Student studentId;
   private int roomId;
   private String key;
 

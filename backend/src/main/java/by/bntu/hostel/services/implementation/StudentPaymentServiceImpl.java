@@ -39,4 +39,20 @@ public class StudentPaymentServiceImpl implements StudentPaymentService {
     public int getSize() {
         return (int) studentPaymentRepo.count();
     }
+
+    @Override
+    public StudentPayment findByStudentID(int id) {
+        return studentPaymentRepo.findStudentPaymentByStudentId(id);
+    }
+
+
+    @Override
+    public  List<StudentPayment> findAllByStudentID(int page, int size, int id) {
+        return studentPaymentRepo.findStudentPaymentByStudentId(id, PageRequest.of(page,size));
+    }
+
+    @Override
+    public int getSizeByStudentId(int id) {
+        return studentPaymentRepo.countByStudentId(id);
+    }
 }

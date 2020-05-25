@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -27,5 +28,9 @@ public class StudentReprimand {
   @Basic
   @Column(name = "description")
   private String description;
+
+  @Basic
+  @Column(name = "date_reprimand",nullable = false)
+  private Date date;
 
 }

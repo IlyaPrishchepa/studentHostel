@@ -7,8 +7,9 @@ export class Base {
   firstName?: string;
   secondName?: string;
   middleName?: string;
+  phone?: string;
   photo?: Blob;
-  roleId?: Role;
+  roleId?: number;
 
 
 }

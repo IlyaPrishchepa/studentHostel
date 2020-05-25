@@ -49,4 +49,11 @@ public class StudentReprimandServiceImpl implements StudentReprimandService {
     public int getSize() {
         return restTemplate.getForObject(backendApiProperties.getStudentReprimandUri()+"/size", Integer.class);
     }
+
+    @Override
+    public StudentReprimand findByStudentID(int id) {
+        return restTemplate.getForObject(backendApiProperties.getStudentReprimandUri() +
+                "/find-by-StudentId/" + id, StudentReprimand.class);
+    }
+
 }

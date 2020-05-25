@@ -39,4 +39,9 @@ public class StudentServiceImpl implements StudentService {
     public int getSize() {
         return (int) studentRepo.count();
     }
+
+    @Override
+    public  Student findByBaseId(int baseId) {
+        return studentRepo.findStudentByBaseId_Id(baseId);
+    }
 }

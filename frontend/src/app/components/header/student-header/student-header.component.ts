@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {TokenStorage} from '../../../token.storage';
 
 @Component({
   selector: 'app-student-header',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,
+              private tokenStorage: TokenStorage) { }
 
   ngOnInit(): void {
+  }
+
+  login() {
+    this.tokenStorage.clearAll();
+    this.router.navigateByUrl('');
   }
 
 }

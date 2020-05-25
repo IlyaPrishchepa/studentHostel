@@ -1,6 +1,8 @@
+import {Student} from '../student/student';
+
 export class StudentRoom {
   id?: number;
-  studentId?: number;
+  studentId?: Student;
   roomId?: number;
   key?: string;
 }

@@ -11,5 +11,6 @@ public interface StudentService {
     List<Student> findAll(int page, int size);
     void deleteByID(int id);
     int getSize();
+    Student findByBaseId(int baseId);
 
 }

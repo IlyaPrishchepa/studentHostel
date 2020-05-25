@@ -44,4 +44,14 @@ public class StudentRoomServiceImpl implements StudentRoomService {
     public StudentRoom findStudentRoomByKey(String key) {
         return studentRoomRepo.findStudentRoomByKey(key);
     }
+
+    @Override
+    public StudentRoom findStudentRoomByStudentId(int id) {
+        return studentRoomRepo.findStudentRoomByStudentId_Id(id);
+    }
+
+    @Override
+    public List<StudentRoom> findByRoomId(int id) {
+        return studentRoomRepo.findStudentRoomByRoomId(id);
+    }
 }

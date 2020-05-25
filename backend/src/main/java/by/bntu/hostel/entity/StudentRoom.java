@@ -16,9 +16,9 @@ public class StudentRoom {
   @Column(name = "id")
   private int id;
 
-  @Basic
-  @Column(name = "student_id")
-  private Integer studentId;
+  @OneToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "student_id", referencedColumnName = "id")
+  private Student studentId;
 
   @Basic
   @Column(name = "room_id",nullable = false)
