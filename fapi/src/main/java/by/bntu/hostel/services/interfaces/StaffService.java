@@ -11,5 +11,6 @@ public interface StaffService {
   List<Staff> findAll(int page, int size);
   void deleteByID(int id);
   int getSize();
+  List<Staff> findByBaseId_RoleId(int id);
 
 }

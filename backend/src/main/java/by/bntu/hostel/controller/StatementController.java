@@ -42,4 +42,15 @@ public class StatementController {
         return statementService.getSize();
     }
 
+    @GetMapping("/find-by-StudentId/{id}")
+    public List<Statement> findByStudentId(@PathVariable int id) {
+        return statementService.findByStudentId(id);
+    }
+
+    @GetMapping("/find-by-StaffId/{id}")
+    public List<Statement> findByStaffId(int id) {
+        return statementService.findByStaffId(id);
+    }
+
+
 }

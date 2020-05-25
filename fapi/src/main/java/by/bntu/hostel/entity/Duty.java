@@ -10,7 +10,7 @@ import java.util.Date;
 public class Duty {
 
   private int id;
-  private int studentId;
+  private Room roomId;
   private Date date;
   private int dutyTypeId;
   private String description;

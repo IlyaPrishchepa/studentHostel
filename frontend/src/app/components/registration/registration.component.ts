@@ -63,9 +63,9 @@ export class RegistrationComponent implements OnInit {
   }
 
 
-  onFileSelected(event:Blob){
+/*  onFileSelected(event:Blob){
     this.regStudent.photo = event;
-  }
+  }*/
 
   onChangeGroup(select:Group){
     this.regStudent.group = select.id;

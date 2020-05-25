@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -17,6 +19,9 @@ public class StatementServiceImpl implements StatementService {
 
     @Override
     public Statement create(Statement statement) {
+        Date currentDate = new Date();
+        statement.setDate(currentDate);
+        statement.setStatusStatementId(1);
         return statementRepo.save(statement);
     }
 
@@ -38,5 +43,15 @@ public class StatementServiceImpl implements StatementService {
     @Override
     public int getSize() {
         return (int) statementRepo.count();
+    }
+
+    @Override
+    public List<Statement> findByStudentId(int id) {
+        return statementRepo.findStatementByStudentId(id);
+    }
+
+    @Override
+    public List<Statement> findByStaffId(int id) {
+        return statementRepo.findStatementByStaffId(id);
     }
 }

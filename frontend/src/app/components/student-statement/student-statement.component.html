@@ -1,32 +1,36 @@
 <div class="text-center pb-1 pt-4">
   <div class="container">
     <div class="row">
-      <div class="mx-auto col-md-12" style="">
+      <div class="mx-auto col-md-12">
         <h1 class="mb-3">Please choose the right employee </h1>
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-4 col-6 p-4" > <img class="img-fluid d-block mb-3 mx-auto rounded-circle" src="https://static.pingendo.com/img-placeholder-2.svg" width="100" alt="Card image cap">
-        <h4> <b>Gregory</b> </h4>
-        <p>Co-founder</p>
-        <p class="mb-0"> <i>"As I lie close to the earth, a thousand unknown plants"</i> </p><a class="btn btn-primary mt-3" href="#">Outline</a>
+      <div class="col-lg-4 col-6 p-4" > <img class="img-fluid d-block mb-3 mx-auto rounded-circle"
+                                             src="https://image.flaticon.com/icons/svg/306/306015.svg" width="100" alt="Card image cap">
+        <h4> <b>{{staffs[0].baseId.firstName}} {{staffs[0].baseId.middleName}} {{staffs[0].baseId.secondName}}</b> </h4>
+        <p>Plumber</p>
+        <p class="mb-0"> <i>"{{staffs[0].description}}"</i> </p>
+        <button class="btn btn-primary mt-3" (click)="openModal(content, 0)">Choose</button>
       </div>
-      <div class="col-lg-4 col-6 p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle" src="https://static.pingendo.com/img-placeholder-3.svg" width="100">
-        <h4> <b>James</b> </h4>
-        <p>CFO</p>
-        <p class="mb-0"> <i>"Then, my friend, when darkness overspreads my eyes"</i> </p>
-        <div class="col-md-12"><a class="btn btn-primary mt-3" href="#" style="">Outline</a></div>
+      <div class="col-lg-4 col-6 p-4" > <img class="img-fluid d-block mb-3 mx-auto rounded-circle"
+                                             src="https://image.flaticon.com/icons/svg/305/305992.svg" width="100" alt="Card image cap">
+        <h4> <b>{{staffs[1].baseId.firstName}} {{staffs[1].baseId.middleName}} {{staffs[1].baseId.secondName}}</b> </h4>
+        <p>Electrician</p>
+        <p class="mb-0"> <i>"{{staffs[1].description}}"</i> </p>
+        <button class="btn btn-primary mt-3" (click)="openModal(content, 1)">Choose</button>
       </div>
-      <div class="col-lg-4 col-6 p-4"> <img class="img-fluid d-block mb-3 mx-auto rounded-circle" src="https://static.pingendo.com/img-placeholder-2.svg" width="100" alt="Card image cap">
-        <h4> <b>Gregory</b> </h4>
-        <p>Co-founder</p>
-        <p class="mb-0"> <i>"As I lie close to the earth, a thousand unknown plants"</i> </p><a class="btn btn-primary mt-3" href="#">Outline</a>
-      </div>
+      <div class="col-lg-4 col-6 p-4" > <img class="img-fluid d-block mb-3 mx-auto rounded-circle"
+                                             src="https://image.flaticon.com/icons/svg/237/237382.svg" width="100" alt="Card image cap">
+      <h4> <b>{{staffs[2].baseId.firstName}} {{staffs[2].baseId.middleName}} {{staffs[2].baseId.secondName}}</b> </h4>
+      <p>Joiner</p>
+      <p class="mb-0"> <i>"{{staffs[2].description}}"</i> </p>
+        <button class="btn btn-primary mt-3" (click)="openModal(content, 2)">Choose</button>
+    </div>
       <hr>
     </div>
   </div>
 </div>
-<div class="">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -37,6 +41,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="table-responsive">
+
           <table class="table">
             <thead>
             <tr>
@@ -48,12 +53,12 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
+            <tr *ngFor="let statement1 of statements; let i = index">
+              <th scope="row">{{i+1}}</th>
+              <td>{{statement1.description}}</td>
+              <td>{{statementStaffs[i].baseId.firstName}} {{statementStaffs[i].baseId.middleName}} {{statementStaffs[i].baseId.secondName}}</td>
+              <td>{{statement1.date| date: 'yyyy-MM-dd'}}</td>
+              <td>{{statementStatus[i].name}}</td>
             </tr>
             </tbody>
           </table>
@@ -61,4 +66,20 @@
       </div>
     </div>
   </div>
-</div>
+
+
+
+<ng-template #content let-modal>
+      <div class="modal-header">
+        <h5 class="modal-title">Describe the problem </h5>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="description"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="create()">Ok</button>
+        <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button> </div>
+</ng-template>

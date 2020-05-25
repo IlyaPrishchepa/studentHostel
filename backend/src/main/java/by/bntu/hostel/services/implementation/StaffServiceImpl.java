@@ -39,4 +39,9 @@ public class StaffServiceImpl implements StaffService {
     public int getSize() {
         return (int) staffRepo.count();
     }
+
+    @Override
+    public List<Staff> findByBaseId_RoleId(int id) {
+        return staffRepo.findStaffByBaseId_RoleId(id);
+    }
 }

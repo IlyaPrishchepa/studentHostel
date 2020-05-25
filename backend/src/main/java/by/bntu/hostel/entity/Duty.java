@@ -17,9 +17,9 @@ public class Duty {
   @Column(name = "id")
   private int id;
 
-  @Basic
-  @Column(name = "student_id",nullable = false)
-  private int studentId;
+  @ManyToOne
+  @JoinColumn(name = "room_id", referencedColumnName = "id")
+  private Room roomId;
 
   @Basic
   @Column(name = "date",nullable = false)

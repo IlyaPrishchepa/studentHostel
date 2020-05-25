@@ -49,4 +49,16 @@ public class StatementServiceImpl implements StatementService {
     public int getSize() {
         return restTemplate.getForObject(backendApiProperties.getStatementUri()+"/size", Integer.class);
     }
+
+    @Override
+    public List<Statement> findByStudentId(int id) {
+        return Arrays.asList(restTemplate.getForObject(backendApiProperties.getStatementUri()
+                +"/find-by-StudentId/"+id, Statement[].class));
+    }
+
+    @Override
+    public List<Statement> findByStaffId(int id) {
+        return Arrays.asList(restTemplate.getForObject(backendApiProperties.getStatementUri()
+                +"/find-by-StaffId/"+id, Statement[].class));
+    }
 }

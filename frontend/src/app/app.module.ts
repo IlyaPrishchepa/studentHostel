@@ -5,6 +5,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import {Interceptor} from './app.interceptor';
+import {NgbDropdownModule, NgbModule, NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import { HeaderMainComponent } from './components/header/header-main/header-main.component';
 import { MainHomePageComponent } from './pages/main-home-page/main-home-page.component';
 import { MainHomeComponent } from './components/main-home/main-home.component';
@@ -54,7 +55,10 @@ import {TokenStorage} from './token.storage';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbDropdownModule,
+    NgbModule,
+    NgbPaginationModule
   ],
   providers: [
     TokenStorage,

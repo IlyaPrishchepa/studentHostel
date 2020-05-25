@@ -42,4 +42,8 @@ public class StaffController {
         return staffService.getSize();
     }
 
+    @GetMapping("/find-by-baseId_RoleID/{id}")
+    public List<Staff> findByBaseId_RoleId(@PathVariable int id) {
+        return staffService.findByBaseId_RoleId(id);
+    }
 }

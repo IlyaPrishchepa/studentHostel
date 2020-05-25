@@ -17,20 +17,10 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>212</td>
-                  <td>22.04.2020</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>211</td>
-                  <td>23.04.2020</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>232</td>
-                  <td>24.04.2020</td>
+                <tr *ngFor="let duty of duty1; let i = index">
+                  <th scope="row">{{i+1}}</th>
+                  <td>{{duty.roomId.numberRoom}}</td>
+                  <td>{{duty.date| date: 'yyyy-MM-dd'}}</td>
                 </tr>
                 </tbody>
               </table>
@@ -54,20 +44,10 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>-</td>
-                  <td>-</td>
+                <tr *ngFor="let duty of duty2; let i = index">
+                  <th scope="row">{{i+1}}</th>
+                  <td>{{duty.roomId.numberRoom}}</td>
+                  <td>{{duty.date| date: 'yyyy-MM-dd'}}</td>
                 </tr>
                 </tbody>
               </table>

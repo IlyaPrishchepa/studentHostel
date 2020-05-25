@@ -11,5 +11,7 @@ public interface StatementService {
   List<Statement> findAll(int page, int size);
   void deleteByID(int id);
   int getSize();
+  List<Statement> findByStudentId(int id);
+  List<Statement> findByStaffId(int id);
 
 }

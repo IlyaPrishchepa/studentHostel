@@ -1,50 +1,46 @@
-<div class="pt-4">
-  <div class="container">
-    <div class="row">
-      <div class="text-center col-md-12">
-        <h1><b>Neighbours</b></h1>
-      </div>
-    </div>
-  </div>
-</div>
-<div *ngFor="let studentRoom of studentRooms; let i = index">
-<div class="py-1" >
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-3" ><img class="img-fluid d-block rounded-circle my-4" src="https://static.pingendo.com/img-placeholder-3.svg"></div>
-      <div class="flex-grow-0 align-items-center col-md-9 mt-4" >
-        <div class="table-responsive" >
-          <table class="table table-striped">
-            <thead >
-            <tr>
-            </tr>
-            </thead>
-            <tbody class="text-left">
-            <tr class="mt-2">
-              <td><b>First Name</b></td>
-              <td>{{studentRoom.studentId.baseId.firstName}}</td>
-            </tr>
-            <tr>
-              <td><b>Second Name</b></td>
-              <td>{{studentRoom.studentId.baseId.secondName}}</td>
-            </tr>
-            <tr>
-              <td><b>Middle Name</b></td>
-              <td>{{studentRoom.studentId.baseId.middleName}}</td>
-            </tr>
-            <tr>
-              <td><b>Number Phone</b></td>
-              <td>{{studentRoom.studentId.baseId.phone}}</td>
-            </tr>
-            <tr>
-              <td><b>Number Group</b></td>
-              <td>{{group[i]}}</td>
-            </tr>
-            </tbody>
-          </table>
+<div class="container my-12">
+  <div class="pt-4">
+    <h1 class="text-center"><h1><b>Neighbours</b></h1></h1>
+    <div class="d-flex justify-content-between flex-wrap">
+      <div *ngFor="let studentRoom of studentRooms; let i = index">
+        <div cclass="card" style="width: 500px;">
+          <div class="row align-items-center">
+            <div class="col-md-4" ><img class="img-fluid d-block rounded-circle my-4" src="https://image.flaticon.com/icons/svg/306/306205.svg"></div>
+            <div class="flex-grow-0 align-items-center col-md-8 mt-4" >
+              <div class="table-responsive" >
+                <table class="table table-striped">
+                  <thead >
+                  <tr>
+                  </tr>
+                  </thead>
+                  <tbody class="text-left">
+                  <tr class="mt-2">
+                    <td><b>First Name</b></td>
+                    <td>{{studentRoom.studentId.baseId.firstName}}</td>
+                  </tr>
+                  <tr>
+                    <td><b>Second Name</b></td>
+                    <td>{{studentRoom.studentId.baseId.secondName}}</td>
+                  </tr>
+                  <tr>
+                    <td><b>Middle Name</b></td>
+                    <td>{{studentRoom.studentId.baseId.middleName}}</td>
+                  </tr>
+                  <tr>
+                    <td><b>Number Phone</b></td>
+                    <td>{{studentRoom.studentId.baseId.phone}}</td>
+                  </tr>
+                  <tr>
+                    <td><b>Number Group</b></td>
+                    <td>{{group[i]}}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
