@@ -7,7 +7,7 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Student {
 
-  private int id;
+  private Integer id;
   private Base baseId;
   private int group;
   private int statusPassportId;

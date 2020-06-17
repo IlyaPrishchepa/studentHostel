@@ -26,6 +26,21 @@ import { StudentStatementPageComponent } from './pages/student-statement-page/st
 import { StudentNeighdorsPageComponent } from './pages/student-neighdors-page/student-neighdors-page.component';
 import { StudentNeighborsComponent } from './components/student-neighdors/student-neighbors.component';
 import {TokenStorage} from './token.storage';
+import { PassportOfficerComponent } from './components/passport-officer/passport-officer.component';
+import { PassportOfficerPageComponent } from './pages/passport-officer-page/passport-officer-page.component';
+import { PassportOfficerHeaderComponent } from './components/header/passport-officer-header/passport-officer-header.component';
+import { PaymentListComponent } from './components/payment-list/payment-list.component';
+import { PaymentPageComponent } from './pages/payment-page/payment-page.component';
+import { WorkerStatemrntPageComponent } from './pages/worker-statemrnt-page/worker-statemrnt-page.component';
+import { WorkerStatemrntComponent } from './components/worker-statemrnt/worker-statemrnt.component';
+import { WorkerHeaderComponent } from './components/header/worker-header/worker-header.component';
+import { AdminListStudentComponent } from './components/admin-list-student/admin-list-student.component';
+import { AdminListStudentPageComponent } from './pages/admin-list-student-page/admin-list-student-page.component';
+import { AdminListEmployeePageComponent } from './pages/admin-list-employee-page/admin-list-employee-page.component';
+import { AdminListEmployeeComponent } from './components/admin-list-employee/admin-list-employee.component';
+import { AdminListRoomComponent } from './components/admin-list-room/admin-list-room.component';
+import { AdminListRoomPageComponent } from './pages/admin-list-room-page/admin-list-room-page.component';
+import { AdminHeaderComponent } from './components/header/admin-header/admin-header.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +64,21 @@ import {TokenStorage} from './token.storage';
     StudentStatementPageComponent,
     StudentNeighdorsPageComponent,
     StudentNeighborsComponent,
+    PassportOfficerComponent,
+    PassportOfficerPageComponent,
+    PassportOfficerHeaderComponent,
+    PaymentListComponent,
+    PaymentPageComponent,
+    WorkerStatemrntPageComponent,
+    WorkerStatemrntComponent,
+    WorkerHeaderComponent,
+    AdminListStudentComponent,
+    AdminListStudentPageComponent,
+    AdminListEmployeePageComponent,
+    AdminListEmployeeComponent,
+    AdminListRoomComponent,
+    AdminListRoomPageComponent,
+    AdminHeaderComponent,
     ],
   imports: [
     BrowserModule,

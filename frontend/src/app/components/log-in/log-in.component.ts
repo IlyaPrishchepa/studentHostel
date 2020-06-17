@@ -5,6 +5,7 @@ import {TokenStorage} from '../../token.storage';
 import {StudentService} from '../../services/student/student.service';
 import {RoleService} from '../../services/role/role.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {StaffService} from '../../services/staff/staff.service';
 
 @Component({
   selector: 'app-log-in',
@@ -21,6 +22,7 @@ export class LogInComponent implements OnInit {
               private baseService: BaseService,
               private tokenStorage: TokenStorage,
               private studentService: StudentService,
+              private staffService: StaffService,
               private roleService:RoleService) {
   }
 
@@ -38,7 +40,13 @@ export class LogInComponent implements OnInit {
                 this.tokenStorage.setCurrentStudent(user)
               });
               this.router.navigateByUrl('student-home');
+            } else if(base.roleId == 3){
+              this.staffService.getStaffByBaseId(base.id).subscribe(staff => {
+                this.tokenStorage.setCurrentStaff(staff)
+              });
+              this.router.navigateByUrl('worker-statement');
             }
+
           });
 
         },

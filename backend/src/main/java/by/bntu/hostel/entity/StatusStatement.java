@@ -14,7 +14,7 @@ public class StatusStatement {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
-  private int id;
+  private Integer id;
 
   @Basic
   @Column(name = "name",nullable = false)

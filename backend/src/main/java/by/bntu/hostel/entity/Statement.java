@@ -15,7 +15,7 @@ public class Statement {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
-  private int id;
+  private Integer id;
 
   @Basic
   @Column(name = "description")
@@ -23,7 +23,7 @@ public class Statement {
 
   @Basic
   @Column(name = "status_statement_id",nullable = false)
-  private int statusStatementId;
+  private Integer statusStatementId;
 
   @Basic
   @Column(name = "date",nullable = false)
@@ -31,10 +31,10 @@ public class Statement {
 
   @Basic
   @Column(name = "staff_id",nullable = false)
-  private int staffId;
+  private Integer staffId;
 
   @Basic
   @Column(name = "student_id",nullable = false)
-  private int studentId;
+  private Integer studentId;
 
 }

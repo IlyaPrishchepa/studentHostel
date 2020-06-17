@@ -44,4 +44,10 @@ public class StaffServiceImpl implements StaffService {
     public List<Staff> findByBaseId_RoleId(int id) {
         return staffRepo.findStaffByBaseId_RoleId(id);
     }
+
+    @Override
+    public  Staff findByBaseId(int baseId) {
+        return staffRepo.findStaffByBaseId_Id(baseId);
+    }
+
 }

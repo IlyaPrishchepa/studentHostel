@@ -7,7 +7,7 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Staff {
 
-  private int id;
+  private Integer id;
   private Base baseId;
   private String description;
 

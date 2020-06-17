@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface StaffRepo extends JpaRepository<Staff,Integer> {
     List<Staff> findStaffByBaseId_RoleId(int id);
+    Staff findStaffByBaseId_Id(int id);
 }

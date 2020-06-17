@@ -9,11 +9,11 @@ import java.util.Date;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Statement {
 
-  private int id;
+  private Integer id;
   private String description;
-  private int statusStatementId;
+  private Integer statusStatementId;
   private Date date;
-  private int staffId;
-  private int studentId;
+  private Integer staffId;
+  private Integer studentId;
 
 }

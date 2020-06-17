@@ -7,7 +7,7 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class StatusPassport {
 
-  private int id;
+  private Integer id;
   private String name;
 
 }

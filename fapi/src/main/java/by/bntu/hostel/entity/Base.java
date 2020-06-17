@@ -9,7 +9,7 @@ import java.sql.Blob;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Base {
 
-  private int id;
+  private Integer id;
   private String login;
   private String password;
   private String firstName;

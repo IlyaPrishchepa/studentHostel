@@ -55,4 +55,10 @@ public class StaffServiceImpl implements StaffService {
         return Arrays.asList(restTemplate.getForObject(backendApiProperties.getStaffUri()
                 +"/find-by-baseId_RoleID/"+id, Staff[].class));
     }
+
+    @Override
+    public Staff findByBaseId(int baseId) {
+        return restTemplate.getForObject(backendApiProperties.getStaffUri()
+                +"/find-byBaseId/" + baseId, Staff.class);
+    }
 }

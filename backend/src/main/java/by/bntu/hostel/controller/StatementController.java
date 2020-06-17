@@ -48,7 +48,7 @@ public class StatementController {
     }
 
     @GetMapping("/find-by-StaffId/{id}")
-    public List<Statement> findByStaffId(int id) {
+    public List<Statement> findByStaffId(@PathVariable int id) {
         return statementService.findByStaffId(id);
     }
 
